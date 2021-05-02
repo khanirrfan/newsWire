@@ -1,14 +1,14 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {View, Text} from 'react-native';
-const Auth = () => {
+const Videos = () => {
   return (
     <>
       <View>
-        <Text >Auth Screen</Text>
+        <Text >Videos Screen</Text>
       </View>
     </>
   );
 };
 
-export default Auth;
+export default Videos;

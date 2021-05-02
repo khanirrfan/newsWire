@@ -7,15 +7,11 @@ import { View, Text } from 'react-native';
 
 import { Provider } from 'react-redux';
 // import Article_Items from './src/component/Articles/Article_Items';
-import store from './store/store';
+import store from './src/store/store';
 
-import AppRouter from './components/config/router';
+import AppRouter from './src/components/config/router';
 
 import { NavigationContainer } from '@react-navigation/native';
-
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (

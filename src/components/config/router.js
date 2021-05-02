@@ -1,35 +1,32 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { connect} from 'react-redux';
-import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator} from '@react-navigation/stack';
+import { } from '@react-navigation/native';
 
-import Home from '../../components/screens/Home/Home';
-
+import Home from '../screens/Home';
+import Videos from '../screens/Videos/Videos';
+import User from '../screens/Users/Users';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
-const HomeStack = () => (
-    <Stack.Navigator initialRouteName ="Home">
-    <Stack.Screen name = "Home" component ={ Home } />
-
-    </Stack.Navigator>
-  );
-
-const AppRouter = ({user, isAuthenticated, error}) => {
-    // console.log(user, isAuthenticated, error);
+const Tabs = () => {
+    return(
+    <Tab.Navigator>
+    <Tab.Screen name = "Home" component = {Home}/>
+    <Tab.Screen name = "Videos" component = {Videos} />
+    <Tab.Screen name = "Users" component = {User} />
+    </Tab.Navigator>
+    )
+}
+const AppRouter = ( ) => {
     return (
         <>
-        <Tab.Navigator>
-        <Tab.Screen name = "Home" component ={ HomeStack} />
-        <Tab.Screen name = "Add" component ={ HomeStack} />
-        <Tab.Screen name = "Profile" component ={ HomeStack} />
-      </Tab.Navigator>
-        </>
-    );
+            <Stack.Navigator>
+                <Stack.Screen name = "Home" component = {Tabs} />
+                <Stack.Screen name= "Users" component = {User} />
+            </Stack.Navigator>
+            </>
+        );
 };
 
-const mapStateToProps = state => ({
-    auth: state.auth,
-});
-export default connect(mapStateToProps, {})(AppRouter);
+export default AppRouter;

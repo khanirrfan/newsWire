@@ -3,7 +3,7 @@ import { LOGIN, REGISTER, ERRORMESSAGE } from '../actions/types';
 
 const initialState = {
     user: [],
-    isAuthenticated: false,
+    isAuthenticated: true,
     error: '',
 };
 
