@@ -7,9 +7,10 @@ import { } from '@react-navigation/native';
 import Home from '../screens/Home';
 import Videos from '../screens/Videos/Videos';
 import User from '../screens/Users/Users';
+import ArticleScreen from '../screens/Articles/Article/Article';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-const Tabs = () => {
+const HomeTabs = () => {
     return(
     <Tab.Navigator>
     <Tab.Screen name = "Home" component = {Home}/>
@@ -22,8 +23,7 @@ const AppRouter = ( ) => {
     return (
         <>
             <Stack.Navigator>
-                <Stack.Screen name = "Home" component = {Tabs} />
-                <Stack.Screen name= "Users" component = {User} />
+                <Stack.Screen name = "Home" component = {HomeTabs} />
             </Stack.Navigator>
             </>
         );
